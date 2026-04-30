@@ -1,0 +1,65 @@
+/* ============================================ */
+/* AOS SIMPLIFICADO (100% OFFLINE)              */
+/* Animaciones básicas al hacer scroll          */
+/* ============================================ */
+
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Fade */
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+[data-aos="fade-down"] {
+    transform: translateY(-30px);
+}
+[data-aos="fade-down"].aos-animate {
+    transform: translateY(0);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+[data-aos="fade-right"].aos-animate {
+    transform: translateX(0);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+[data-aos="fade-left"].aos-animate {
+    transform: translateX(0);
+}
+
+/* Zoom */
+[data-aos="zoom-in"] {
+    transform: scale(0.9);
+}
+[data-aos="zoom-in"].aos-animate {
+    transform: scale(1);
+}
+
+/* Delay classes */
+[data-aos][data-aos-delay="100"] { transition-delay: 0.1s; }
+[data-aos][data-aos-delay="200"] { transition-delay: 0.2s; }
+[data-aos][data-aos-delay="300"] { transition-delay: 0.3s; }
+[data-aos][data-aos-delay="400"] { transition-delay: 0.4s; }
+[data-aos][data-aos-delay="500"] { transition-delay: 0.5s; }
+
+/* Duration */
+[data-aos][data-aos-duration="400"] { transition-duration: 0.4s; }
+[data-aos][data-aos-duration="600"] { transition-duration: 0.6s; }
+[data-aos][data-aos-duration="800"] { transition-duration: 0.8s; }
+[data-aos][data-aos-duration="1000"] { transition-duration: 1s; }

@@ -1,0 +1,7 @@
+Este es un archivo placeholder para la aplicación de escritorio de Stock Manager para macOS.
+Para obtener la versión completa, compila la aplicación con:
+npm run build:mac
+
+Stock Manager Desktop App - Gestión de inventario para macOS
+Versión: 1.0.0
+Requisitos: macOS 10.14 (Mojave) o superior

@@ -1,0 +1,7 @@
+Este es un archivo placeholder para la aplicación móvil de Stock Manager.
+Para obtener la versión completa, compila la aplicación con:
+npm run build:android
+
+Stock Manager Mobile App - Gestión de inventario para dispositivos móviles
+Versión: 1.0.0
+Requisitos: Android 8.0 o superior

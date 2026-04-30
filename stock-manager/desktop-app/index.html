@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Manager Desktop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="assets/css/desktop.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="assets/img/logo.png" alt="Stock Manager" class="sidebar-logo">
+                    <div class="sidebar-brand">
+                        Stock<span>Manager</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-menu">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-page="dashboard">
+                            <i class="bi bi-speedometer2"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="inventory">
+                            <i class="bi bi-box-seam"></i>
+                            <span>Inventario</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="sales">
+                            <i class="bi bi-cart-check"></i>
+                            <span>Ventas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="reports">
+                            <i class="bi bi-graph-up"></i>
+                            <span>Reportes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="suppliers">
+                            <i class="bi bi-truck"></i>
+                            <span>Proveedores</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="settings">
+                            <i class="bi bi-gear"></i>
+                            <span>Configuración</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">Admin User</div>
+                        <div class="user-role">Administrador</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="btn btn-icon" id="sidebarToggle">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <div class="page-title">
+                        <h1 id="pageTitle">Dashboard</h1>
+                    </div>
+                </div>
+                
+                <div class="top-bar-right">
+                    <div class="search-box">
+                        <input type="text" class="form-control" placeholder="Buscar productos...">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    
+                    <div class="top-bar-actions">
+                        <button class="btn btn-icon" id="notificationBtn">
+                            <i class="bi bi-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        
+                        <button class="btn btn-icon" id="syncBtn">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </button>
+                        
+                        <button class="btn btn-primary" id="addProductBtn">
+                            <i class="bi bi-plus-circle"></i>
+                            Nuevo Producto
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content" id="pageContent">
+                <!-- Dashboard Page -->
+                <div class="page" id="dashboardPage">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon blue">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">2,847</div>
+                                <div class="stat-label">Total Productos</div>
+                                <div class="stat-change positive">
+                                    <i class="bi bi-arrow-up"></i>
+                                    +12.5%
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon green">
+                                <i class="bi bi-currency-dollar"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">$45,678</div>
+                                <div class="stat-label">Valor Inventario</div>
+                                <div class="stat-change positive">
+                                    <i class="bi bi-arrow-up"></i>
+                                    +8.3%
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon orange">
+                                <i class="bi bi-exclamation-triangle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">23</div>
+                                <div class="stat-label">Stock Bajo</div>
+                                <div class="stat-change negative">
+                                    <i class="bi bi-arrow-up"></i>
+                                    +2 nuevos
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon purple">
+                                <i class="bi bi-cart-check"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">$12,345</div>
+                                <div class="stat-label">Ventas Hoy</div>
+                                <div class="stat-change positive">
+                                    <i class="bi bi-arrow-up"></i>
+                                    +15.7%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h5>Ventas Recientes</h5>
+                                <button class="btn btn-sm btn-outline">Ver Todo</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="sales-list">
+                                    <div class="sale-item">
+                                        <div class="sale-info">
+                                            <div class="sale-product">Laptop Dell XPS</div>
+                                            <div class="sale-time">Hace 2 horas</div>
+                                        </div>
+                                        <div class="sale-amount">$1,299.99</div>
+                                    </div>
+                                    <div class="sale-item">
+                                        <div class="sale-info">
+                                            <div class="sale-product">Mouse Logitech</div>
+                                            <div class="sale-time">Hace 3 horas</div>
+                                        </div>
+                                        <div class="sale-amount">$29.99</div>
+                                    </div>
+                                    <div class="sale-item">
+                                        <div class="sale-info">
+                                            <div class="sale-product">Teclado Mecánico</div>
+                                            <div class="sale-time">Hace 5 horas</div>
+                                        </div>
+                                        <div class="sale-amount">$89.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h5>Productos con Stock Bajo</h5>
+                                <button class="btn btn-sm btn-outline">Ver Todo</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="low-stock-list">
+                                    <div class="low-stock-item">
+                                        <div class="product-info">
+                                            <div class="product-name">Mouse Logitech</div>
+                                            <div class="stock-info">
+                                                <span class="current-stock">3</span>
+                                                <span class="min-stock">/ 10</span>
+                                            </div>
+                                        </div>
+                                        <div class="stock-status critical">
+                                            <i class="bi bi-exclamation-circle"></i>
+                                        </div>
+                                    </div>
+                                    <div class="low-stock-item">
+                                        <div class="product-info">
+                                            <div class="product-name">USB 32GB</div>
+                                            <div class="stock-info">
+                                                <span class="current-stock">18</span>
+                                                <span class="min-stock">/ 20</span>
+                                            </div>
+                                        </div>
+                                        <div class="stock-status warning">
+                                            <i class="bi bi-exclamation-triangle"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card chart-card">
+                        <div class="card-header">
+                            <h5>Gráfico de Ventas</h5>
+                            <div class="chart-controls">
+                                <select class="form-select form-select-sm">
+                                    <option>Últimos 7 días</option>
+                                    <option>Últimos 30 días</option>
+                                    <option>Últimos 3 meses</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Page -->
+                <div class="page d-none" id="inventoryPage">
+                    <div class="page-header">
+                        <div class="page-actions">
+                            <button class="btn btn-primary" id="addProductBtn">
+                                <i class="bi bi-plus-circle"></i>
+                                Agregar Producto
+                            </button>
+                            <button class="btn btn-outline" id="importBtn">
+                                <i class="bi bi-upload"></i>
+                                Importar
+                            </button>
+                            <button class="btn btn-outline" id="exportBtn">
+                                <i class="bi bi-download"></i>
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="inventory-filters">
+                        <div class="filter-group">
+                            <input type="text" class="form-control" placeholder="Buscar productos...">
+                        </div>
+                        <div class="filter-group">
+                            <select class="form-select">
+                                <option>Todas las categorías</option>
+                                <option>Electrónica</option>
+                                <option>Accesorios</option>
+                                <option>Almacenamiento</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <select class="form-select">
+                                <option>Todos los estados</option>
+                                <option>Stock Normal</option>
+                                <option>Stock Bajo</option>
+                                <option>Sin Stock</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="inventory-table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>SKU</th>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Stock</th>
+                                    <th>Precio</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>LP001</td>
+                                    <td>
+                                        <div class="product-info">
+                                            <div class="product-name">Laptop Dell XPS</div>
+                                        </div>
+                                    </td>
+                                    <td>Electrónica</td>
+                                    <td>15</td>
+                                    <td>$1,299.99</td>
+                                    <td><span class="badge bg-success">Normal</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-icon" title="Editar">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-icon" title="Eliminar">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>MS002</td>
+                                    <td>
+                                        <div class="product-info">
+                                            <div class="product-name">Mouse Logitech</div>
+                                        </div>
+                                    </td>
+                                    <td>Accesorios</td>
+                                    <td>3</td>
+                                    <td>$29.99</td>
+                                    <td><span class="badge bg-danger">Bajo</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-icon" title="Editar">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-icon" title="Eliminar">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Other pages would go here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/desktop.js"></script>
+</body>
+</html>

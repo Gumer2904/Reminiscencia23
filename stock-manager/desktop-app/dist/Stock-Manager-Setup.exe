@@ -1,0 +1,7 @@
+Este es un archivo placeholder para la aplicación de escritorio de Stock Manager.
+Para obtener la versión completa, compila la aplicación con:
+npm run build:win
+
+Stock Manager Desktop App - Gestión de inventario para escritorio
+Versión: 1.0.0
+Requisitos: Windows 10 o superior, macOS 10.14+, Ubuntu 18.04+

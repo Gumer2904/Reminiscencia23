@@ -1,0 +1,7 @@
+Este es un archivo placeholder para la aplicación de escritorio de Stock Manager para Linux.
+Para obtener la versión completa, compila la aplicación con:
+npm run build:linux
+
+Stock Manager Desktop App - Gestión de inventario para Linux
+Versión: 1.0.0
+Requisitos: Ubuntu 18.04 o superior, Fedora 30+, equivalentes
